@@ -1,15 +1,15 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const bookRouter = require("./routes/RoutesOfBook");
+const oRouter = require("./routes/RoutesO");
 
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use("/api/books", bookRouter);
+app.use("/api/items", oRouter);
 
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb+srv://rizzly:MY6mDM9Q7FyRdLaD@cluster0.7xohn0d.mongodb.net/?retryWrites=true&w=majorityy",
+  process.env.MONGODB_URI || "mongodb+srv://rizzly:MY6mDM9Q7FyRdLaD@cluster0.7xohn0d.mongodb.net/?retryWrites=true&w=majority",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
